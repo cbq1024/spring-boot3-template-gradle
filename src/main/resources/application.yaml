@@ -1,48 +1,48 @@
 spring:
-  application:
-    name: spring-boot3-template-gradle
-  ai:
-    openai:
-        base-url: ${OPENAI_API_BASE_URL}
-        api-key: ${OPENAI_API_KEY}
-        chat:
-            options:
-                model: gpt-4o
-    vectorstore:
-      pgvector:
-          initialize-schema: true
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: ${GOOGLE_CLIENT_ID}
-            client-secret: ${GOOGLE_CLIENT_SECRET}
-            scope:
-              - email
-              - profile
-          github:
-            client-id: ${GITHUB_CLIENT_ID}
-            client-secret: ${GITHUB_CLIENT_SECRET}
-            scope:
-              - user:email
-              - read:user
-  docker:
-      compose:
-          enabled: true
-          lifecycle-management: start_only
+    application:
+        name: spring-boot3-template-gradle
+    ai:
+        openai:
+            base-url: ${OPENAI_API_BASE_URL}
+            api-key: ${OPENAI_API_KEY}
+            chat:
+                options:
+                    model: gpt-4o
+#        vectorstore:
+#            pgvector:
+#                initialize-schema: true
+    security:
+        oauth2:
+            client:
+                registration:
+                    google:
+                        client-id: ${GOOGLE_CLIENT_ID}
+                        client-secret: ${GOOGLE_CLIENT_SECRET}
+                        scope:
+                            - email
+                            - profile
+                    github:
+                        client-id: ${GITHUB_CLIENT_ID}
+                        client-secret: ${GITHUB_CLIENT_SECRET}
+                        scope:
+                            - user:email
+                            - read:user
+    docker:
+        compose:
+            enabled: true
+            lifecycle-management: start_only
 
 gg:
-  jte:
-    developmentMode: true
+    jte:
+        developmentMode: true
 
 logging:
-  level:
-    org:
-      springframework:
-        security: ERROR #change to DEBUG or INFO for more information about spring security
-      apache:
-        pdfbox:
-            pdmodel:
-                font:
-                    FileSystemFontProvider: ERROR
+    level:
+        org:
+            springframework:
+                security: ERROR #change to DEBUG or INFO for more information about spring security
+            apache:
+                pdfbox:
+                    pdmodel:
+                        font:
+                            FileSystemFontProvider: ERROR

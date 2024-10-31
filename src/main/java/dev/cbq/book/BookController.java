@@ -15,15 +15,17 @@ public class BookController {
 
     private final ChatClient chatClient;
 
-    public BookController(ChatClient.Builder builder) {
-        this.chatClient = builder.build();
+    public BookController(ChatClient chatClient) {
+        this.chatClient = chatClient;
     }
 
-    @GetMapping
+
+    @GetMapping("/generate-list")
     public List<BookRecommendation> list() {
         return chatClient.prompt()
             .user("Generate 10 book recommendation for a book on Literature. Please limit the summary to 100 words and it is must be chinese.")
             .call()
-            .entity(new ParameterizedTypeReference<>() {});
+            .entity(new ParameterizedTypeReference<>() {
+            });
     }
 }

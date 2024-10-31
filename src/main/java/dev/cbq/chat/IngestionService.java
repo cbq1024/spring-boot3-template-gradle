@@ -11,7 +11,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class IngestionService implements CommandLineRunner {
 
     private static final Logger log = LoggerFactory.getLogger(IngestionService.class);
